@@ -1,0 +1,5 @@
+---
+- name: Goodbye Playbook
+  hosts: localhost
+  roles:
+    - role: goodbye

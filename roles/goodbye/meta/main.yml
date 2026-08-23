@@ -1,0 +1,13 @@
+---
+galaxy_info:
+  role_name: goodbye
+  author: yossyossy
+  description: Print the message goodbye
+  license: MIT
+  min_ansible_version: "2.14"
+  platforms:
+    - name: GenericLinux
+      versions:
+        - all
+  galaxy_tags: []
+dependencies: []
