@@ -1,0 +1,4 @@
+---
+- name: Print goodbye
+  ansible.builtin.debug:
+    msg: "{{ goodbye_message }}"

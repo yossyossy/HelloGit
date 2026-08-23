@@ -1,0 +1,22 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Include goodbye role to cover debug path
+      ansible.builtin.include_role:
+        name: goodbye
+        public: true
+
+    - name: Capture goodbye debug output
+      ansible.builtin.debug:
+        msg: "{{ goodbye_message }}"
+      register: goodbye_debug_result
+
+    - name: Assert debug printed goodbye
+      ansible.builtin.assert:
+        that:
+          - goodbye_message == 'goodbye'
+          - goodbye_debug_result.msg == 'goodbye'
+        fail_msg: Expected debug output to be exactly goodbye
+        success_msg: goodbye debug output is correct
